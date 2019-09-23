@@ -1,0 +1,23 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+
+const Babel = {
+  test: /\.js$/,
+  exclude: /node_modules/,
+  loader: 'babel-loader',
+  options: {
+    presets: [
+      '@babel/preset-env',
+      '@babel/preset-react',
+    ],
+  },
+}
+
+module.exports = {
+  module: {
+    rules: [Babel],
+  },
+  plugins: [
+    new HtmlWebpackPlugin(),
+  ],
+}
